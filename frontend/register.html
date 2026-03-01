@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Register</h2>
+  <input type="text" id="name" placeholder="Name">
+  <input type="email" id="email" placeholder="Email">
+  <input type="text" id="college" placeholder="College">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="register()">Register</button>
+</div>
+
+<script>
+async function register() {
+  const data = {
+    name: name.value,
+    email: email.value,
+    college: college.value,
+    password: password.value
+  };
+
+  const res = await fetch("http://localhost:5000/api/auth/register", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify(data)
+  });
+
+  const result = await res.json();
+  alert("Registered Successfully");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
