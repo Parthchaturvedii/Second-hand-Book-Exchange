@@ -1,4 +1,4 @@
-const API = "https://second-hand-book-exchange.onrender.com/api";
+const API = "https://student-portal-3-8bbc.onrender.com/api";
 const token = localStorage.getItem("token");
 
 // If not logged in → go to login
@@ -36,7 +36,7 @@ fetchBooks();
 async function requestExchange(bookId) {
   const token = localStorage.getItem("token");
 
-  await fetch(`https://second-hand-book-exchange.onrender.com/api/exchange/request/${bookId}`, {
+  await fetch(`https://student-portal-3-8bbc.onrender.com/api/exchange/request/${bookId}`, {
     method: "POST",
     headers: {
       "Authorization": token
