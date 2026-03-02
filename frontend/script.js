@@ -1,5 +1,5 @@
 async function fetchBooks() {
-    const res = await fetch("https://student-portal-3-8bbc.onrender.com/api/books");
+    const res = await fetch("https://second-hand-book-exchange-1.onrender.com/api/books");
     const books = await res.json();
 
     container.innerHTML = ""; // Fixed typo
